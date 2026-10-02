@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Эскизы логотипа — Студия сайтов Цыннова</title>
+<style>
+  :root {
+    --ink: #1E2A2E;
+    --ink-2: #16201F;
+    --accent: #B5552E;
+    --paper: #F7F5F1;
+    --card: #FFFFFF;
+    --muted: #6B7370;
+    --border: #E3DFD6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 48px 24px 80px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 40px; max-width: 560px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 32px 24px; display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  .card .label { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 20px; letter-spacing: 0.3px; }
+  .card .stage { min-height: 160px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .card .desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .note {
+    font-size: 12px; color: var(--accent); margin-top: 8px; background: #FBEDE6;
+    border-radius: 6px; padding: 4px 10px; display: inline-block;
+  }
+
+  .lockup-b { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .lockup-b .top { font-size: 12px; letter-spacing: 1px; color: var(--muted); font-weight: 400; }
+  .lockup-b .bottom { font-size: 26px; font-weight: 700; color: var(--ink); }
+  .lockup-b .rule { width: 36px; height: 3px; background: var(--accent); margin-top: 4px; border-radius: 2px; }
+
+  .dark-strip {
+    margin-top: 56px; background: var(--ink); border-radius: 14px; padding: 32px 24px;
+    display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; align-items: center;
+  }
+  .dark-strip .card-d { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Эскизы логотипа — «Студия сайтов Цыннова»</h1>
+  <p class="sub">Правки после первого показа: буква сделана настоящим шрифтовым символом «Ц» (не собирается из блоков — не путается с «Ч»), плашка со срезом собрана в цельный значок: сверху «студия сайтов», буква по центру, фамилия снизу.</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="label">Вариант А — значок в круге</div>
+      <div class="stage">
+        <svg width="130" height="130" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="56" fill="none" stroke="#1E2A2E" stroke-width="1.5"/>
+          <text x="60" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="56" fill="#B5552E">Ц</text>
+        </svg>
+      </div>
+      <div class="desc">Буква «Ц» в тонком круге. Отдельная иконка: favicon, аватар, печать на документах.</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Вариант Б — чистая типографика</div>
+      <div class="stage">
+        <div class="lockup-b">
+          <div class="top">СТУДИЯ САЙТОВ</div>
+          <div class="bottom">Цыннова</div>
+          <div class="rule"></div>
+        </div>
+      </div>
+      <div class="desc">Без иконки: фамилия — крупно и жирно, «студия сайтов» — мельче сверху. Акцент — только цвет и короткая полоса под именем.</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Вариант В — плашка-эмблема</div>
+      <div class="stage">
+        <svg width="150" height="190" viewBox="0 0 140 176">
+          <path d="M10 10 H108 L130 32 V166 H10 Z" fill="#1E2A2E"/>
+          <text x="70" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="8.5" letter-spacing="1" fill="#F7F5F1">СТУДИЯ САЙТОВ</text>
+          <text x="70" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="56" fill="#F7F5F1">Ц</text>
+          <text x="70" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="15" fill="#F7F5F1">Цыннова</text>
+        </svg>
+      </div>
+      <div class="desc">Всё в одной плашке: сверху «студия сайтов», по центру буква, снизу фамилия. Готовый самостоятельный значок для шапки сайта, соцсетей, печати.</div>
+      <div class="note">Внизу — «Цыннова». Если нужно полнее, могу заменить на «Алексей Цыннов»</div>
+    </div>
+
+  </div>
+
+  <div class="dark-strip">
+    <div class="card-d">
+      <svg width="64" height="64" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="56" fill="none" stroke="#F7F5F1" stroke-width="1.5"/>
+        <text x="60" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="56" fill="#C97B52">Ц</text>
+      </svg>
+    </div>
+    <div class="card-d">
+      <svg width="60" height="76" viewBox="0 0 140 176">
+        <path d="M10 10 H108 L130 32 V166 H10 Z" fill="#F7F5F1"/>
+        <text x="70" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="8.5" letter-spacing="1" fill="#1E2A2E">СТУДИЯ САЙТОВ</text>
+        <text x="70" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="56" fill="#1E2A2E">Ц</text>
+        <text x="70" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="15" fill="#1E2A2E">Цыннова</text>
+      </svg>
+    </div>
+    <div class="card-d" style="color:#F7F5F1;">
+      <div style="font-size:12px; letter-spacing:1px; color:#B9C0BC;">СТУДИЯ САЙТОВ</div>
+      <div style="font-size:24px; font-weight:700;">Цыннова</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

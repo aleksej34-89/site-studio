@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сайты для бизнеса под ключ (версия 1, архив)</title>
+<style>
+  :root {
+    --dark: #132A3A;
+    --dark-2: #0E1F2B;
+    --bg: #F7F4EF;
+    --card: #FFFFFF;
+    --accent: #D97748;
+    --accent-dark: #B85E33;
+    --text: #1F2A33;
+    --muted: #5B6B76;
+    --border: #E3DED4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; }
+
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--dark);
+    color: #fff;
+  }
+  header .container {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 16px; padding-bottom: 16px;
+  }
+  .logo { font-weight: 700; font-size: 18px; letter-spacing: 0.2px; }
+  .logo span { color: var(--accent); }
+  .btn {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-weight: 600; padding: 12px 24px; border-radius: 8px;
+    text-decoration: none; border: none; cursor: pointer; font-size: 15px;
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn-outline {
+    display: inline-block; background: transparent; color: #fff;
+    font-weight: 600; padding: 10px 20px; border-radius: 8px;
+    text-decoration: none; border: 1px solid #3A5266; font-size: 14px;
+  }
+
+  .hero {
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+    color: #fff;
+    padding: 64px 0 80px;
+  }
+  .hero .tag {
+    display: inline-block; font-size: 13px; color: #E8B591;
+    background: rgba(217,119,72,0.15); border: 1px solid rgba(217,119,72,0.4);
+    padding: 5px 12px; border-radius: 20px; margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 40px; line-height: 1.18; font-weight: 700; max-width: 720px; }
+  .hero p.lead { margin-top: 18px; font-size: 18px; color: #C6CFD6; max-width: 600px; }
+  .hero .cta-row { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .hero .price-note { font-size: 14px; color: #9FADB8; }
+  .hero .price-note b { color: #fff; }
+
+  .section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .section-sub { color: var(--muted); font-size: 16px; max-width: 620px; margin-bottom: 40px; }
+  .niches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .niche-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; }
+  .niche-card.more {
+    background: transparent; border: 1px dashed var(--border);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    color: var(--muted); font-size: 15px;
+  }
+  .niche-card .icon {
+    width: 44px; height: 44px; border-radius: 10px; background: #FBEDE3;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+  }
+  .niche-card h3 { font-size: 18px; margin-bottom: 8px; }
+  .niche-card p { color: var(--muted); font-size: 14px; }
+
+  .work-bg { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .step { position: relative; padding-top: 8px; }
+  .step .num {
+    font-size: 14px; font-weight: 700; color: var(--accent);
+    border: 1px solid var(--accent); width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .step h4 { font-size: 16px; margin-bottom: 6px; }
+  .step p { font-size: 14px; color: var(--muted); }
+
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
+  .included-item { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .included-item .check {
+    flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+    color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+
+  .price-box {
+    background: var(--dark); color: #fff; border-radius: 16px; padding: 44px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+  }
+  .price-box .amount { font-size: 30px; font-weight: 700; }
+  .price-box .amount .placeholder { color: #E8B591; }
+  .price-box .note { color: #B9C3CA; font-size: 14px; margin-top: 6px; max-width: 360px; }
+
+  .trust-card {
+    background: var(--card); border: 1px dashed var(--border); border-radius: 12px;
+    padding: 32px; text-align: center; color: var(--muted);
+  }
+
+  .about { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+  .about-photo {
+    width: 160px; height: 160px; border-radius: 50%; background: var(--card);
+    border: 1px dashed var(--border); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 13px; text-align: center;
+  }
+  .about-text { flex: 1; min-width: 260px; }
+  .about-text h2 { font-size: 24px; margin-bottom: 12px; }
+  .about-text p { color: var(--muted); font-size: 15px; margin-bottom: 10px; }
+
+  .contact-bg { background: var(--dark); color: #fff; }
+  .contact-bg .section-title { color: #fff; }
+  .contact-bg .section-sub { color: #B9C3CA; }
+  .contact-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .contact-info { margin-top: 28px; font-size: 14px; color: #9FADB8; }
+  .contact-info .placeholder { color: #E8B591; }
+
+  footer { background: var(--dark-2); color: #8493A0; font-size: 13px; text-align: center; padding: 24px 0; }
+  footer .placeholder { color: #C77A4C; }
+
+  @media (max-width: 860px) {
+    .hero h1 { font-size: 30px; }
+    .niches-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .included-grid { grid-template-columns: 1fr; }
+    .about { flex-direction: column; text-align: center; }
+    .price-box { flex-direction: column; align-items: flex-start; text-align: left; }
+  }
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 26px; }
+    section { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">Сайты <span>под ключ</span></div>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a href="#contact" class="btn-outline">Написать</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="tag">Персональная разработка</span>
+    <h1>Сайт для вашего бизнеса, который отвечает на главные вопросы клиента</h1>
+    <p class="lead">Разрабатываю одностраничные сайты для малого бизнеса: понятная структура, ваши тексты, фото и цены, прямой путь от вопроса клиента до звонка или заявки.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn">Оставить заявку</a>
+      <span class="price-note">Стоимость: <b>{{цена уточняется}}</b>, точно после короткого созвона.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">Сферы, с которыми работаю</div>
+    <p class="section-sub">Каждый бизнес продаёт по-своему: у цветочного магазина важна витрина и доставка, у автосервиса — цены и запись, у салона — мастера и результат. Учитываю это в структуре сайта.</p>
+    <div class="niches-grid">
+      <div class="niche-card">
+        <div class="icon">💐</div>
+        <h3>Цветочные магазины</h3>
+        <p>Каталог букетов, доставка, оформление заказа в мессенджер — без сложной корзины и лишних шагов.</p>
+      </div>
+      <div class="niche-card">
+        <div class="icon">🚗</div>
+        <h3>Автомойки и автосервисы</h3>
+        <p>Список услуг и цен, запись на удобное время, адрес и график работы на видном месте.</p>
+      </div>
+      <div class="niche-card">
+        <div class="icon">💇</div>
+        <h3>Салоны красоты и барберы</h3>
+        <p>Прайс-лист, мастера и услуги, кнопка записи — сайт, который отвечает на вопрос «сколько это стоит» сразу.</p>
+      </div>
+      <div class="niche-card">
+        <div class="icon">🦷</div>
+        <h3>Стоматологии и косметологии</h3>
+        <p>Услуги и цены, врачи и специалисты, кнопка записи на приём — сайт, которому доверяют перед визитом.</p>
+      </div>
+      <div class="niche-card">
+        <div class="icon">☕</div>
+        <h3>Кафе, кофейни и доставка еды</h3>
+        <p>Меню, адрес и график работы, кнопка заказа или брони столика.</p>
+      </div>
+      <div class="niche-card">
+        <div class="icon">🧹</div>
+        <h3>Мастера на час и клининг</h3>
+        <p>Список услуг и цен, район работы, быстрая заявка в мессенджер.</p>
+      </div>
+      <div class="niche-card more">
+        И другие сферы — обсудим ваш бизнес отдельно
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work-bg">
+  <div class="container">
+    <div class="section-title">Как проходит работа</div>
+    <p class="section-sub">Без долгих согласований и правок в бесконечной переписке — понятные шаги от заявки до готового сайта.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Заявка и созвон</h4>
+        <p>Коротко обсуждаем ваш бизнес: что за услуги, кто клиент, что должно быть на сайте.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Разработка сайта</h4>
+        <p>Собираю сайт с вашим текстом, фото и ценами, с учётом того, как устроена ваша сфера.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Правки</h4>
+        <p>Показываю результат, вношу правки по вашим замечаниям.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>Запуск</h4>
+        <p>Публикуем сайт, подключаем кнопки связи и адрес — сайт готов принимать заявки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">Что входит</div>
+    <div class="included-grid">
+      <div class="included-item"><span class="check">✓</span> Одностраничный сайт под вашу нишу с вашими текстами, фото, услугами и ценами</div>
+      <div class="included-item"><span class="check">✓</span> Кнопки звонка и мессенджеров, форма заявки</div>
+      <div class="included-item"><span class="check">✓</span> Адаптация под телефон и планшет</div>
+      <div class="included-item"><span class="check">✓</span> Адрес и график работы, кнопка на карту</div>
+      <div class="included-item"><span class="check">✓</span> {{домен и хостинг — уточняется}}</div>
+      <div class="included-item"><span class="check">✓</span> {{срок изготовления — уточняется}}</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="price-box">
+      <div>
+        <div class="amount">Сайт под ключ — <span class="placeholder">{{от N ₽}}</span></div>
+        <div class="note">Точная стоимость зависит от объёма сайта, называю её после короткого созвона — без скрытых доплат.</div>
+      </div>
+      <a href="#contact" class="btn">Узнать стоимость</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">Примеры работ</div>
+    <p class="section-sub">Честно: пока это первые сайты, готовые примеры появятся здесь, как только будут запущены.</p>
+    <div class="trust-card">
+      Первые кейсы появятся здесь совсем скоро — без выдуманных цифр и отзывов.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="about">
+      <div class="about-photo">{{фото Алексея}}</div>
+      <div class="about-text">
+        <h2>Обо мне</h2>
+        <p>Меня зовут Алексей. Делаю сайты для малого бизнеса — вдумчиво разбираюсь, как устроена ваша сфера, и собираю сайт, который решает именно ваши задачи.</p>
+        <p>Работаю напрямую, без посредников и агентств: вы говорите, что нужно, я делаю сайт и показываю результат для правок.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-bg" id="contact">
+  <div class="container">
+    <div class="section-title">Обсудим ваш сайт</div>
+    <p class="section-sub">Напишите пару слов о вашем бизнесе — отвечу и предложу, с чего начать.</p>
+    <div class="contact-row">
+      <a href="tel:{{телефон}}" class="btn">Позвонить</a>
+      <a href="https://t.me/{{telegram}}" class="btn-outline">Написать в Telegram</a>
+      <a href="https://wa.me/{{whatsapp}}" class="btn-outline">Написать в WhatsApp</a>
+    </div>
+    <div class="contact-info">
+      Телефон: <span class="placeholder">{{телефон}}</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Сайты под ключ · <span class="placeholder">{{контакты и реквизиты уточняются}}</span>
+</footer>
+
+</body>
+</html>
