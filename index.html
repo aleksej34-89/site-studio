@@ -50,13 +50,44 @@
     display: inline-block; background: var(--accent); color: #211208;
     font-weight: 600; padding: 13px 26px; border-radius: 10px;
     text-decoration: none; border: none; cursor: pointer; font-size: 15px;
-    transition: background 0.15s ease;
+    transition: background 0.15s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .btn:hover { background: #EA9E67; }
+  .btn:hover {
+    background: #EA9E67;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+  }
   .btn-outline {
     display: inline-block; background: transparent; color: var(--text);
     font-weight: 600; padding: 11px 22px; border-radius: 10px;
     text-decoration: none; border: 1px solid var(--border-strong); font-size: 14px;
+  }
+  .btn-contact {
+    position: relative; overflow: hidden; isolation: isolate;
+    display: inline-block; color: #fff;
+    font-weight: 600; padding: 13px 26px; border-radius: 10px;
+    text-decoration: none; border: none; font-size: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-contact.tg { background: linear-gradient(135deg, #2AABEE, #229ED9); }
+  .btn-contact.vk { background: linear-gradient(135deg, #0077FF, #0057C2); }
+  .btn-contact:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+  }
+  .btn-contact::after {
+    content: ""; position: absolute; top: 0; left: -60%; width: 45%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(255,255,255,0.65), transparent);
+    transform: skewX(-20deg);
+    animation: btn-shine 3.2s ease-in-out infinite;
+  }
+  .contact-row a:nth-child(2).btn-contact::after { animation-delay: 1.1s; }
+  @keyframes btn-shine {
+    0% { left: -60%; }
+    55%, 100% { left: 130%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-contact::after { animation: none; }
   }
 
   /* Hero */
@@ -339,8 +370,8 @@
     <p class="section-sub">Напишите пару слов о вашем бизнесе — отвечу и предложу, с чего начать.</p>
     <div class="contact-row">
       <a href="tel:{{телефон}}" class="btn">Позвонить</a>
-      <a href="https://t.me/{{telegram}}" class="btn-outline">Написать в Telegram</a>
-      <a href="https://vk.com/{{vk}}" class="btn-outline">Написать во ВКонтакте</a>
+      <a href="https://t.me/{{telegram}}" class="btn-contact tg">Написать в Telegram</a>
+      <a href="https://vk.com/{{vk}}" class="btn-contact vk">Написать во ВКонтакте</a>
     </div>
     <div class="contact-info">
       Телефон: <span class="placeholder">{{телефон}}</span>
